@@ -1,0 +1,16 @@
+import './style';
+import { Component } from 'preact';
+import Router from 'preact-router';
+import Main from './components/main/main';
+
+export default class App extends Component {
+  render() {
+    return (
+      <div className="container">
+        <Router>
+          <Main path="/:query?" />
+        </Router>
+      </div>
+    );
+  }
+}
