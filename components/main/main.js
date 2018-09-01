@@ -1,15 +1,17 @@
 import { Component } from 'preact';
-import LinkedinBtn from '../linkedin-register';
+import RectangleHeader from '../rectangle-header';
 import axios from 'axios';
 import linesImage from '../../assets/lines.png';
 import linesFormImage from '../../assets/lines-form.png';
 import linesTextImage from '../../assets/lines-text.png';
 import LineSeperator from '../line-seperator';
-import lecturerOne from '../../assets/lecturer-1.png';
 import Form from '../form';
 import EventText from './../event-text';
 import LecturersSection from './../lecturers-section';
 import Footer from '../footer';
+import LinkedinBtn from '../linkedin-register-btn';
+import connectWitLinkedin from '../../assets/Logo-2CRev-75px-R.png';
+import headerImage from '../../assets/header-image.jpg';
 
 const url = 'https://blockchain-meetup-api.herokuapp.com/linkedin';
 
@@ -20,9 +22,9 @@ export default class Main extends Component {
     formText: 'או פשוט מלאו את הפרטים הבאים:',
     blockchainText: 'BLOCKCHAIN DISRUPT',
     lecturersData: [
-      { name: 'שם מרצה', bio: 'BIO', image: lecturerOne },
-      { name: 'שם מרצה', bio: 'BIO', image: lecturerOne },
-      { name: 'שם מרצה', bio: 'BIO', image: lecturerOne }
+      { name: 'שם מרצה', bio: 'BIO', image: '' },
+      { name: 'שם מרצה', bio: 'BIO', image: '' },
+      { name: 'שם מרצה', bio: 'BIO', image: '' }
     ]
   };
   componentWillMount() {
@@ -36,15 +38,21 @@ export default class Main extends Component {
       blockchainText,
       lecturersData
     } = this.state;
+
     return (
-      <div>
-        <LinkedinBtn
+      <div className="container">
+        <div className="header">
+          <img src={headerImage} />
+        </div>
+        <RectangleHeader
           image={linesImage}
           text={linkedinText}
-          link={url}
+          link={false}
           classes="linkedin"
         />
-        <LinkedinBtn
+        <LineSeperator />
+        <LinkedinBtn link={url} classes="linkedin" image={connectWitLinkedin} />
+        <RectangleHeader
           image={linesFormImage}
           text={formText}
           link={false}
@@ -52,15 +60,18 @@ export default class Main extends Component {
         />
         <LineSeperator />
         <Form />
-        <LinkedinBtn
+
+        {/* 
+          <RectangleHeader
           image={linesTextImage}
           text={blockchainText}
           link={false}
           classes="form"
-        />
-        <LineSeperator circle={true} />
-        <EventText />
-        <LecturersSection lecturersData={lecturersData} />
+          />
+            <LineSeperator circle={true} />
+           <EventText />
+          <LecturersSection lecturersData={lecturersData} />
+        */}
         <Footer />
       </div>
     );

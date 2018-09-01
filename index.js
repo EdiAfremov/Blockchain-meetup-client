@@ -6,7 +6,7 @@ import Main from './components/main/main';
 export default class App extends Component {
   render() {
     return (
-      <div className="container">
+      <div>
         <Router>
           <Main path="/:query?" />
         </Router>

@@ -1,4 +1,4 @@
-const LinkedinBtn = ({ image, text, link, classes }) => {
+const RectangleHeader = ({ image, text, link, classes }) => {
   return (
     <div className="linkedin-register-container">
       <div className="lines-img">
@@ -12,4 +12,4 @@ const LinkedinBtn = ({ image, text, link, classes }) => {
     </div>
   );
 };
-export default LinkedinBtn;
+export default RectangleHeader;
