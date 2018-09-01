@@ -19,13 +19,17 @@ a:visited {
     max-width: 650px;
     margin: 0 auto;
     box-sizing: border-box;
-    padding: 10px;
+    /* padding: 10px; */
     background: #bdc3c7;
     /* fallback for old browsers */
     background: -webkit-linear-gradient(to bottom, #0f1012, #222627);
     /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to bottom, #0f1012, #222627);
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.content {
+    padding: 0 10px;
 }
 
 .header img {
@@ -44,7 +48,7 @@ a:visited {
 
 .linkedin-bg {
     background: #006699;
-    border-radius: 4px;
+    /* border-radius: 4px; */
     transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 
@@ -352,14 +356,19 @@ textarea {
 }
 
 @media only screen and (max-width: 586px) {
-    .container {
-        padding: 10px;
-    }
+    /* .container {
+    padding: 10px;
+  } */
     /* .linkedin-register-container {
     padding: 0 10px;
   } */
     .linkedin-btn {
         font-size: 20px;
+        top: 10px;
+        height: calc(100% - 10px);
+    }
+    .rect-container {
+        min-height: 65px;
     }
     /* .form-container,
   .linkedin-btn-container {

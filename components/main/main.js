@@ -44,24 +44,29 @@ export default class Main extends Component {
         <div className="header">
           <img src={headerImage} />
         </div>
-        <RectangleHeader
-          image={linesImage}
-          text={linkedinText}
-          link={false}
-          classes="linkedin"
-        />
-        <LineSeperator />
-        <LinkedinBtn link={url} classes="linkedin" image={connectWitLinkedin} />
-        <RectangleHeader
-          image={linesFormImage}
-          text={formText}
-          link={false}
-          classes="form"
-        />
-        <LineSeperator />
-        <Form />
+        <div className="content">
+          <RectangleHeader
+            image={linesImage}
+            text={linkedinText}
+            link={false}
+            classes="linkedin"
+          />
+          <LineSeperator />
+          <LinkedinBtn
+            link={url}
+            classes="linkedin"
+            image={connectWitLinkedin}
+          />
+          <RectangleHeader
+            image={linesFormImage}
+            text={formText}
+            link={false}
+            classes="form"
+          />
+          <LineSeperator />
+          <Form />
 
-        {/* 
+          {/* 
           <RectangleHeader
           image={linesTextImage}
           text={blockchainText}
@@ -72,7 +77,8 @@ export default class Main extends Component {
            <EventText />
           <LecturersSection lecturersData={lecturersData} />
         */}
-        <Footer />
+          <Footer />
+        </div>
       </div>
     );
   }
