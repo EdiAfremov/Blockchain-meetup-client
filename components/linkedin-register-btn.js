@@ -1,8 +1,9 @@
 const LinkedinBtn = ({ image, link }) => {
   return (
-    <div className="linkedin-btn-container linkedin-bg">
+    <div className="linkedin-btn-container linkedin-bg-btn">
       <a
         href={link && link}
+        target="_blank"
         className={
           !link
             ? 'linkedin-register-btn link-disabled'

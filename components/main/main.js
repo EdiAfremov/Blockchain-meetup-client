@@ -12,8 +12,9 @@ import Footer from '../footer';
 import LinkedinBtn from '../linkedin-register-btn';
 import connectWitLinkedin from '../../assets/Logo-2CRev-75px-R.png';
 import headerImage from '../../assets/header-image.jpg';
-
-const url = 'https://blockchain-meetup-api.herokuapp.com/linkedin';
+import Modal from './../modal';
+// const url = 'https://blockchain-meetup-api.herokuapp.com/linkedin';
+const url = 'http://localhost:5000/linkedin';
 
 export default class Main extends Component {
   state = {
@@ -25,10 +26,14 @@ export default class Main extends Component {
       { name: 'שם מרצה', bio: 'BIO', image: '' },
       { name: 'שם מרצה', bio: 'BIO', image: '' },
       { name: 'שם מרצה', bio: 'BIO', image: '' }
-    ]
+    ],
+    modalShow: false
   };
   componentWillMount() {
-    const { Registered } = this.props;
+    const { registered } = this.props;
+    if (this.props.matches.registered === 'true') {
+      this.setState({ modalShow: true });
+    }
   }
 
   render() {
@@ -41,6 +46,7 @@ export default class Main extends Component {
 
     return (
       <div className="container">
+        <Modal show={this.state.modalShow} />
         <div className="header">
           <img src={headerImage} />
         </div>
