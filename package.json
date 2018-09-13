@@ -9,7 +9,7 @@
     "serve": "preact build && preact serve",
     "dev": "preact watch",
     "lint": "eslint src",
-    "postinstall": "preact build && preact serve"
+    "postinstall": "npm run -s serve"
   },
   "eslintConfig": {
     "extends": "eslint-config-synacor"
